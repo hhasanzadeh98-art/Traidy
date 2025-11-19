@@ -293,21 +293,37 @@ if (isset($_SESSION['user'])) {
         }
 
         /* floating helper */
-        .fab {
+        .chat-bubble {
             position: fixed;
-            left: 18px;
-            bottom: 18px;
-            background: linear-gradient(90deg, #06b6d4, #7c3aed);
-            padding: 12px;
-            border-radius: 999px;
-            box-shadow: 0 10px 30px rgba(7, 16, 30, 0.6);
-            cursor: pointer
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            cursor: pointer;
+            z-index: 50;
+            animation: float 3s ease-in-out infinite;
         }
 
-        /* small utilities */
-        .muted {
-            color: var(--muted)
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
+
 
         a.cta-link {
             color: #c7e9ff;
@@ -350,6 +366,7 @@ if (isset($_SESSION['user'])) {
 </head>
 
 <body>
+    <div class="chat-bubble">i</div>
     <header class="topbar">
         <div class="brand">
             <div class="logo">traidy</div>
@@ -366,8 +383,8 @@ if (isset($_SESSION['user'])) {
         </nav>
 
         <div class="actions">
-            <button class="icon-btn">ورود/عضویت</button>
-            <button class="icon-btn"><a href="logout.php">خروج</a></button>
+            <a class="icon-btn" href="login.php" style="background-color: lightgreen;">Enter/Register</a>
+            <a class="icon-btn" href="logout.php" style="background-color: lightcoral;">Exit</a>
         </div>
     </header>
 
@@ -392,25 +409,29 @@ if (isset($_SESSION['user'])) {
                     <div class="meta">استراتژی</div>
                     <h3>چگونه یک سیستم معاملاتی قابل آزمایش بسازیم</h3>
                     <p class="excerpt">در این مقاله گام‌به‌گام از صفر شروع به کار میکنیم ،تحلیل تکنیکال و فاندامنتال رو با هم بررسی میکنیم و ادامه میدیم تا به سطح متوسط برسیم</p>
+                    <button class="btn btn-primary"><a href="../trad/tradB.php">شروع آموزش</a></button>
                 </article>
 
                 <article class="card">
                     <div class="meta">روانشناسی</div>
                     <h3>مدیریت احساسات هنگام ضرر</h3>
                     <p class="excerpt">تکنیک‌های عملی برای کنترل طمع و ترس و حفظ دیسیپلین در شرایط ناپایدار بازار.</p>
+                    <button class="btn btn-primary"><a href="../trad/tradB.php">شروع آموزش</a></button>
+
                 </article>
 
                 <article class="card">
                     <div class="meta">1404/08/15 — آموزش</div>
                     <h3>راهنمای کامل نسبت ریسک به ریوارد</h3>
                     <p class="excerpt">اینجا بهت میگه استراتژیت سودده هست یا ضررده</p>
-                    <button class="btn btn-primary"><a href="../trad/tradB.php">شروع</a></button>
+                    <button class="btn btn-primary"><a href="../trad/tradB.php">شروع آموزش</a></button>
                 </article>
 
                 <article class="card">
                     <div class="meta">1404/08/10 — ابزارها</div>
                     <h3>شبیه‌ساز معاملاتی: تمرین بدون از دست دادن سرمایه</h3>
                     <p class="excerpt">معرفی ابزارهایی برای تمرین ترید و ساخت سناریوهای بازار جهت بررسی رفتار استراتژی‌ها.</p>
+                    <button class="btn btn-primary"><a href="../trad/tradB.php">شروع آموزش</a></button>
                 </article>
             </div>
         </section>
@@ -460,10 +481,9 @@ if (isset($_SESSION['user'])) {
 
     </main>
 
-    <button class="fab" title="گزارش مشکل">!</button>
 
     <footer style="margin-top:40px;padding:28px 18px;text-align:center;color:var(--muted);font-size:14px">
-        © 2025 آکادمی ترید — طراحی شده برای تریدرهای حرفه‌ای. تمامی حقوق محفوظ است.
+        © 2025 تریدی — طراحی شده برای تریدرهای حرفه‌ای.
     </footer>
 
     <script>

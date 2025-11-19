@@ -18,7 +18,7 @@ if (isset($_SESSION['user'])) {
 <?php
 // اتصال به دیتابیس
 $host = "localhost";
-$db   = "journal";
+$db   = "trade";
 $user = "root";
 $pass = "";
 $charset = "utf8mb4";
@@ -412,7 +412,7 @@ $weeks = groupWeeklyWithSeparateTotals($trades);
         <header class="flex justify-between items-center mb-8">
             <nav class="flex gap-6 text-sm font-medium text-[var(--muted)]">
                 <a href="../panel/dashboard.php" class="text-[var(--text)] font-semibold">داشبورد</a>
-                <a href="amar.php" class="hover:text-[var(--primary)]">گزارش کلی</a>
+                <a href="jurnal.php" class="text-[var(--text)] font-semibold">گزارش کلی</a>
             </nav>
             <div class="flex items-center gap-4">
                 <span class="text-sm text-[var(--muted)]"></span>

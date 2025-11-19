@@ -1,5 +1,22 @@
 <?php
+require_once "../function/functions.php";
 session_start();
+
+$user_name = "کاربر ناشناس"; // مقدار پیش‌فرض
+
+if (isset($_SESSION['user'])) {
+    $id = $_SESSION['user']; // id ذخیره شده در سشن
+    $user = getuserbyid($id); // واکشی کل اطلاعات کاربر از DB
+
+    if ($user) {
+        $user_name = $user->name;
+    }
+}
+?>
+
+
+<?php
+
 
 $host = "localhost";
 $db   = "journal";
@@ -195,7 +212,7 @@ $total_this_week = array_sum($pair_count);
                 <a href="../panel/dashboard.php" class="hover:text-[var(--primary)]">داشبورد</a>
             </nav>
             <div class="flex items-center gap-4">
-                <span class="font-bold text-lg">Hamed</span>
+                <span class="font-bold text-lg"><?php echo ucfirst($user_name) ?></span>
                 <div class="logo">Traidy</div>
             </div>
         </header>
